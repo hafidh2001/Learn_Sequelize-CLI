@@ -1,0 +1,29 @@
+1. npm init -y (package.json) + set "type":"module"
+
+2. npm i express cors pg sequelize dotenv (dep)
+
+3. npm i --save-dev nodemon sequelize-cli (dev-dep)
+
+4. show optional arguments sequelize-cli
+   - npx sequelize-cli -h, --help
+
+5. npx sequelize init (generate direktori config, models, migrations, seeders)
+    - config : konfigurasi database + environment
+    - models : validasi, perintah query, pengaturan table, fitur hooks 
+    - migrations : keperluan migrasi table ke database
+    - seeders : seeding data / input data sesuai yang ditentukan pada suatu table
+
+6. touch .env (create confidential key)
+
+7. modify database's config for development in config/config.json 
+  "development": {
+    "username": "postgres",
+    "password": "sql2001",
+    "database": "db_sequelize-cli",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+
+8. Create database specified by configuration (database name from key database in object development config)
+   npx sequelize db:create
