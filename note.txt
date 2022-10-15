@@ -27,3 +27,22 @@
 
 8. Create database specified by configuration (database name from key database in object development config)
    npx sequelize db:create
+
+9. Create Model Photo with attribute
+   - if type:module, dont forget to change require() to import in path models/index.js before run this command :
+   npx sequelize model:generate --name Photo --attributes title:string,caption:string,image_url:text
+   - if type:module, dont forget to change require() to import in path models/modelName.js
+
+10. Run Pending migrations
+   - if type:module, dont forget to change extension of file migration from .js to .cjs before run this command :
+   npx sequelize db:migrate
+
+11. Create Seeder data to Model Photo
+   npx sequelize seed:generate --name seeding_photo_datas
+
+2. Run Seeder data
+   if type:module, dont forget to change extension of file migration from .js to .cjs before run this command :
+   - for specified file :
+     npx sequelize db:seed --seed 20221015035819-seeding_photo_datas.cjs
+   - for seed all :
+     npx sequelize db:seed:all
